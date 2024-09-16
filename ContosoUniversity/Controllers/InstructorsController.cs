@@ -105,6 +105,7 @@ namespace ContosoUniversity.Controllers
             }
             ViewData["Courses"] = vm;
         }
+        ///Delete
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -133,6 +134,39 @@ namespace ContosoUniversity.Controllers
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
+        }
+        [HttpGet]
+        ///edit
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var instructorToEdit = await _context.Students
+                .FirstOrDefaultAsync(m => m.ID == id);
+            if (instructorToEdit == null)
+            {
+                return NotFound();
+            }
+            return View(instructorToEdit);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit([Bind("ID,LastName,FirstMidName,HireDate")] Instructor modifiedInstructor)
+        {
+            if (ModelState.IsValid)
+            {
+                if (modifiedInstructor.ID == null)
+                {
+                    return BadRequest();
+                }
+                _context.Instructors.Update(modifiedInstructor);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return View(modifiedInstructor);
         }
     }
 }
