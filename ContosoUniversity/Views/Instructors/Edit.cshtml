@@ -1,10 +1,10 @@
 ﻿@model ContosoUniversity.Models.Instructor
 
 @{
-    ViewData["Title"] = "Ed";
+    ViewData["Title"] = "Edit";
 }
 
-<h1>Details</h1>
+<h1>Edit</h1>
 
 <div>
     <h4>Instructor Data</h4>
@@ -27,6 +27,11 @@
                     <label asp-for="HireDate" class="control-label"></label>
                     <input asp-for="HireDate" class="form-control" />
                     <span asp-validation-for="HireDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="OfficeAssignment" class="control-label"></label>
+                    <input asp-for="OfficeAssignment" class="form-control" />
+                    <span asp-validation-for="OfficeAssignment" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Edit" class="btn btn-primary" />

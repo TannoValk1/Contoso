@@ -18,7 +18,7 @@ namespace ContosoUniversity.Models
         public string FirstMidName { get; set; }
 
         [Display(Name = "Full Name")]
-        public string FullName //uus andmeväli moodustatakse olemasolevaist, mitte ei küsita kasutajalt korduvalt sama asja
+        public string FullName
         { get 
             { return LastName + ", " + FirstMidName; } 
         }
@@ -30,16 +30,8 @@ namespace ContosoUniversity.Models
         public ICollection<CourseAssignment>? CourseAssignments { get; set; }
         public OfficeAssignment? OfficeAssignment { get; set; }
 
-        //igaühel on oma kolm unikaalset propertyt
-
-        public Mood? Mood { get; set; } //õpetaja tuju
-        [Display(Name = "Kutsetunnistuse #:")]
-        public string? VocationCredential { get; set; } //kutsekoja kutseregistri tunnistuse väljastuse number
-        public int? WorkYears { get; set; } //tööaastaid selles asutuses
-    }
-
-    public enum Mood
-    {
-        Happy, Sad, Anxious, Puzzled, HighAF
+        public int? Pay { get; set; } 
+        public string? Gender { get; set; }
+        public string? City { get; set; }
     }
 }
