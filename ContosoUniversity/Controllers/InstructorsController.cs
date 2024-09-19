@@ -168,5 +168,27 @@ namespace ContosoUniversity.Controllers
             }
             return View(modifiedInstructor);
         }
+        public async Task<IActionResult> Clone(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var clonedInstructor = await _context.Instructors
+                .FirstOrDefaultAsync(m => m.ID == id);
+            if (clonedInstructor == null)
+            {
+                return NotFound();
+            }
+            int lastID = _context.Instructors.OrderBy(u => u.ID).Last().ID;
+            lastID++;
+            var selectedInstructor = new Instructor();
+            selectedInstructor.FirstMidName = clonedInstructor.FirstMidName;
+            selectedInstructor.LastName = clonedInstructor.LastName;
+                selectedInstructor.HireDate = clonedInstructor.HireDate;
+            _context.Instructors.Add(selectedInstructor);
+            await _context.SaveChangesAsync(true);
+            return RedirectToAction("Index");
+        }
     }
 }
