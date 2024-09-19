@@ -185,7 +185,8 @@ namespace ContosoUniversity.Controllers
             var selectedInstructor = new Instructor();
             selectedInstructor.FirstMidName = clonedInstructor.FirstMidName;
             selectedInstructor.LastName = clonedInstructor.LastName;
-                selectedInstructor.HireDate = clonedInstructor.HireDate;
+            selectedInstructor.HireDate = clonedInstructor.HireDate;
+            //selectedInstructor.OfficeAssignment = clonedInstructor.OfficeAssignment;
             _context.Instructors.Add(selectedInstructor);
             await _context.SaveChangesAsync(true);
             return RedirectToAction("Index");
