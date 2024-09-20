@@ -31,9 +31,9 @@ namespace ContosoUniversity.Data
             };
 
             //iga õpilane lisatakse ükshaaval läbi foreach tsükli
-            foreach (Student student in students)
-            {
-                context.Students.Add(student);
+           
+            context.courses.AddRange(courses);
+            context.SaveChanges();
             }
             //ja andmebaasi muudatused salvestatakse
             context.SaveChanges();
@@ -79,11 +79,10 @@ namespace ContosoUniversity.Data
 
                 new Enrollment{StudentID=10,CourseID=9001,Grade=Grade.A},
             };
-            foreach (Enrollment enrollment in enrollments)
-            {
-                context.Enrollments.Add(enrollment);
-            }
+            context.Enrollments.AddRange(enrollments);
             context.SaveChanges();
+
+            if (Context.Instructor.Any())
         }
 
     }
