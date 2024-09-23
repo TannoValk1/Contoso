@@ -29,11 +29,11 @@
                 <td> @Html.DisplayFor(modelItem => department.StartDate)</td>
                 <td> @Html.DisplayFor(modelItem => department.RowVersion)</td>  
                 <td>
-                    <a asp-action="Details" asp-route-id="@department.DepartmentID"></a>
-                    <a asp-action="Edit" asp-route-id="@department.DepartmentID"></a>
-                    <a asp-action="Edit Administrator" asp-route-id="@department.DepartmentID"></a>
-                    <a asp-action="Clone" asp-route-id="@department.DepartmentID"></a>
-                    <a asp-action="Delete" asp-route-id="@department.DepartmentID"></a>
+                    <a asp-action="Details" asp-route-id="@department.DepartmentID" class="btn btn-dark">Details</a>
+                    <a asp-action="Edit" asp-route-id="@department.DepartmentID" class="btn btn-dark">Edit</a>
+                    <a asp-action="Edit Administrator" asp-route-id="@department.DepartmentID" class="btn btn-dark">Edit Administrator</a>
+                    <a asp-action="Clone" asp-route-id="@department.DepartmentID" class="btn btn-dark">Clone</a>
+                    <a asp-action="Delete" asp-route-id="@department.DepartmentID" class="btn btn-dark">Delete</a>
                 </td>
             </tr>
         }

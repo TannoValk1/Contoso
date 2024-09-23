@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tanno\\Source\\Repos\\TannoValk1\\Contoso\\ContosoUniversity\\ContosoUniversity.csproj": {}
+    "C:\\Users\\tanno\\source\\repos\\TannoValk1\\Contoso\\ContosoUniversity\\ContosoUniversity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tanno\\Source\\Repos\\TannoValk1\\Contoso\\ContosoUniversity\\ContosoUniversity.csproj": {
+    "C:\\Users\\tanno\\source\\repos\\TannoValk1\\Contoso\\ContosoUniversity\\ContosoUniversity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tanno\\Source\\Repos\\TannoValk1\\Contoso\\ContosoUniversity\\ContosoUniversity.csproj",
+        "projectUniqueName": "C:\\Users\\tanno\\source\\repos\\TannoValk1\\Contoso\\ContosoUniversity\\ContosoUniversity.csproj",
         "projectName": "ContosoUniversity",
-        "projectPath": "C:\\Users\\tanno\\Source\\Repos\\TannoValk1\\Contoso\\ContosoUniversity\\ContosoUniversity.csproj",
+        "projectPath": "C:\\Users\\tanno\\source\\repos\\TannoValk1\\Contoso\\ContosoUniversity\\ContosoUniversity.csproj",
         "packagesPath": "C:\\Users\\tanno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tanno\\Source\\Repos\\TannoValk1\\Contoso\\ContosoUniversity\\obj\\",
+        "outputPath": "C:\\Users\\tanno\\source\\repos\\TannoValk1\\Contoso\\ContosoUniversity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tanno\\AppData\\Roaming\\NuGet\\NuGet.Config",

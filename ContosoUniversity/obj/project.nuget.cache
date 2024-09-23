@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qz+aPtEDWJQZNlttPCpZNLkEsStFBrMUZPrQygCYKnudG0SNpmK7+uHXPF8ks0kkj9KZu8zheS3vGPMb1IIJAA==",
+  "dgSpecHash": "Ffep9MS7W1G3mVLQZjy/47eyx4oLT4fzjd7nkZN1CCUITElFVk+Ar6rvtBk1UxSduyACTkvm8up9t2asjia5jg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tanno\\Source\\Repos\\TannoValk1\\Contoso\\ContosoUniversity\\ContosoUniversity.csproj",
+  "projectFilePath": "C:\\Users\\tanno\\source\\repos\\TannoValk1\\Contoso\\ContosoUniversity\\ContosoUniversity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tanno\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\tanno\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
