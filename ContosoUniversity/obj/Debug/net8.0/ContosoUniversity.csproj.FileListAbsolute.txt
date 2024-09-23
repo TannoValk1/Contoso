@@ -486,3 +486,15 @@ C:\Users\opilane\source\repos\TannoValk1\Contoso\ContosoUniversity\obj\Debug\net
 C:\Users\opilane\source\repos\TannoValk1\Contoso\ContosoUniversity\obj\Debug\net8.0\ContosoUniversity.genruntimeconfig.cache
 C:\Users\opilane\source\repos\TannoValk1\Contoso\ContosoUniversity\obj\Debug\net8.0\ref\ContosoUniversity.dll
 C:\Users\opilane\source\repos\TannoValk1\Contoso\ContosoUniversity\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\tanno\Source\Repos\TannoValk1\Contoso\ContosoUniversity\obj\Debug\net8.0\ContosoUniversity.csproj.AssemblyReference.cache
+C:\Users\tanno\Source\Repos\TannoValk1\Contoso\ContosoUniversity\obj\Debug\net8.0\ContosoUniversity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tanno\Source\Repos\TannoValk1\Contoso\ContosoUniversity\obj\Debug\net8.0\ContosoUniversity.AssemblyInfoInputs.cache
+C:\Users\tanno\Source\Repos\TannoValk1\Contoso\ContosoUniversity\obj\Debug\net8.0\ContosoUniversity.AssemblyInfo.cs
+C:\Users\tanno\Source\Repos\TannoValk1\Contoso\ContosoUniversity\obj\Debug\net8.0\ContosoUniversity.csproj.CoreCompileInputs.cache
+C:\Users\tanno\Source\Repos\TannoValk1\Contoso\ContosoUniversity\obj\Debug\net8.0\ContosoUniversity.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\tanno\Source\Repos\TannoValk1\Contoso\ContosoUniversity\obj\Debug\net8.0\ContosoUniversity.RazorAssemblyInfo.cache
+C:\Users\tanno\Source\Repos\TannoValk1\Contoso\ContosoUniversity\obj\Debug\net8.0\ContosoUniversity.RazorAssemblyInfo.cs
+C:\Users\tanno\Source\Repos\TannoValk1\Contoso\ContosoUniversity\obj\Debug\net8.0\ContosoUniversity.sourcelink.json
+C:\Users\tanno\Source\Repos\TannoValk1\Contoso\ContosoUniversity\obj\Debug\net8.0\ContosoUniversity.dll
+C:\Users\tanno\Source\Repos\TannoValk1\Contoso\ContosoUniversity\obj\Debug\net8.0\refint\ContosoUniversity.dll
+C:\Users\tanno\Source\Repos\TannoValk1\Contoso\ContosoUniversity\obj\Debug\net8.0\ContosoUniversity.pdb
