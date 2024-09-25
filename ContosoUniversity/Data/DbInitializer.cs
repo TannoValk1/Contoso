@@ -4,8 +4,8 @@ namespace ContosoUniversity.Data
 {
     public class DbInitializer
     {
-        public static void Initialize(SchoolContext context) 
-        { 
+        public static void Initialize(SchoolContext context)
+        {
             //teeb kindlaks et andmebaas tehakse, või oleks olemas
             context.Database.EnsureCreated();
 
@@ -16,7 +16,7 @@ namespace ContosoUniversity.Data
             }
 
             //objekt õpilastega, mis lisatakse siis, kui õpilasi sisestatud ei ole.
-            var students = new Student[] 
+            var students = new Student[]
             {
                 new Student{FirstMidName="Nipi",LastName="Tiri",EnrollmentDate=DateTime.Parse("2069-04-20")},
                 new Student{FirstMidName="Meredith",LastName="Alonso",EnrollmentDate=DateTime.Parse("2002-09-01")},
@@ -31,12 +31,12 @@ namespace ContosoUniversity.Data
             };
 
             //iga õpilane lisatakse ükshaaval läbi foreach tsükli
-           
-            context.courses.AddRange(courses);
-            context.SaveChanges();
-            }
-            //ja andmebaasi muudatused salvestatakse
-            context.SaveChanges();
+
+            //context.courses.AddRange(courses);
+            //context.SaveChanges();
+            //}
+            ////ja andmebaasi muudatused salvestatakse
+            //context.SaveChanges();
 
             //eelnev struktuur, kuid kursustega: \/
             var courses = new Course[]
@@ -50,7 +50,7 @@ namespace ContosoUniversity.Data
                 new Course{CourseID=2042,Title="Kirjandus",Credits=4},
                 new Course{CourseID=9001,Title="Arvutimängude Ajalugu",Credits=1}
             };
-            foreach(Course course in courses)
+            foreach (Course course in courses)
             {
                 context.Courses.Add(course);
             }
@@ -79,11 +79,12 @@ namespace ContosoUniversity.Data
 
                 new Enrollment{StudentID=10,CourseID=9001,Grade=Grade.A},
             };
-            context.Enrollments.AddRange(enrollments);
-            context.SaveChanges();
+            //    context.Enrollments.AddRange(enrollments);
+            //    context.SaveChanges();
 
-            if (Context.Instructor.Any())
+            //    if (Context.Instructor.Any())
+            //}
+
         }
-
     }
 }
