@@ -1,0 +1,41 @@
+﻿@model ContosoUniversity.Models.Department
+@{
+    ViewData["Title"] = "Departments";
+}
+<h1>Details</h1>
+<div>
+    <h4>Departments</h4>
+    <hr />
+    <dl class="row">
+        <dt>@Html.DisplayNameFor(model => model.Name)</dt>
+        <dt>@Html.DisplayFor(model => model.Name)</dt>
+        <dt>@Html.DisplayNameFor(model => model.Administrator.FullName)</dt>
+        <dt>@Html.DisplayFor(model => model.Administrator.FullName)</dt>
+        <dt>@Html.DisplayNameFor(model => model.Budget)</dt>
+        <dt>@Html.DisplayFor(model => model.Budget)</dt>
+        <dt>@Html.DisplayNameFor(model => model.StudentHeight)</dt>
+        <dt>@Html.DisplayFor(model => model.StudentHeight)</dt>
+        <dt>@Html.DisplayNameFor(model => model.Lore)</dt>
+        <dt>@Html.DisplayFor(model => model.Lore)</dt>
+        <dt>
+    @{
+        if(Model.StudentHeight != null)
+        {
+            @Html.DisplayNameFor(model=>model.StudentHeight)
+        }
+        }
+        </dt>
+        <dt>
+        @{
+            if (Model.StudentHeight != null)
+            {
+                @Html.DisplayNameFor(model => model.StudentHeight)
+            }
+        }
+        </dt>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.DepartmentID" class="btn btn-warning">Edit</a>
+    <a asp-action="Index" class="btn btn-secondary">Index</a>
+</div>

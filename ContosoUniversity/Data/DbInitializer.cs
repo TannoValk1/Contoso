@@ -32,13 +32,8 @@ namespace ContosoUniversity.Data
 
             //iga õpilane lisatakse ükshaaval läbi foreach tsükli
            
-            context.courses.AddRange(courses);
+            context.Students.AddRange(students);
             context.SaveChanges();
-            }
-            //ja andmebaasi muudatused salvestatakse
-            context.SaveChanges();
-
-            //eelnev struktuur, kuid kursustega: \/
             var courses = new Course[]
             {
                 new Course{CourseID=1050,Title="Keemia",Credits=3},
@@ -79,11 +74,15 @@ namespace ContosoUniversity.Data
 
                 new Enrollment{StudentID=10,CourseID=9001,Grade=Grade.A},
             };
-            context.Enrollments.AddRange(enrollments);
-            context.SaveChanges();
+            //context.Enrollments.AddRange(enrollments);
+            //context.SaveChanges();
 
-            if (Context.Instructor.Any())
+            //if (Context.Instructor.Any())
+            }
+            //ja andmebaasi muudatused salvestatakse
+            //eelnev struktuur, kuid kursustega: \/
+            
         }
 
     }
-}
+
