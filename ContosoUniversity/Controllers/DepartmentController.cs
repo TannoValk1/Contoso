@@ -90,5 +90,37 @@ namespace ContosoUniversity.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+        [HttpGet]
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var DepartmentToEdit = await _context.Departments
+                .FirstOrDefaultAsync(m => m.DepartmentID == id);
+            if (DepartmentToEdit == null)
+            {
+                return NotFound();
+            }
+            return View(DepartmentToEdit);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit([Bind("DepartmentID, Name, Budget, Administrator, StartDate, Lore")] Department modifiedDepartment)
+        {
+            if (ModelState.IsValid)
+            {
+                if (modifiedDepartment.DepartmentID == null)
+                {
+                    return BadRequest();
+                }
+                _context.Departments.Update(modifiedDepartment);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return View(modifiedDepartment);
+        }
     }
 }
