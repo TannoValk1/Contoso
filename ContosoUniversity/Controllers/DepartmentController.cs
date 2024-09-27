@@ -60,6 +60,35 @@ namespace ContosoUniversity.Controllers
             
             return View(Department);
         }
+        [HttpGet]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
+            var Department = await _context.Departments
+                .FirstOrDefaultAsync(m => m.DepartmentID == id);
+
+            if (Department == null)
+            {
+                return NotFound();
+            }
+
+            return View(Department);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var Department = await _context.Departments.FindAsync(id);
+
+            _context.Departments.Remove(Department);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

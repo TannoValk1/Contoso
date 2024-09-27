@@ -13,7 +13,7 @@ namespace ContosoUniversity.Models
         [Column(TypeName = "Money")]
         public decimal Budget { get; set; }
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "(0:yyyy-mm-dd)", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-mm-dd}", ApplyFormatInEditMode = true)]
         public DateTime StartDate { get; set; }
 
 
