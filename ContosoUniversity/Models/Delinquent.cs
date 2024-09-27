@@ -4,7 +4,7 @@ namespace ContosoUniversity.Models
 {
     public enum Violation
     {
-        CleanRecord, KilledSomeone, Deathrow
+        CleanRecord, Jail, Deathrow
     }
     public class Delinquent
     {
