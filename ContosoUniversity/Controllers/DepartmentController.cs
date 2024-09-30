@@ -122,5 +122,52 @@ namespace ContosoUniversity.Controllers
             }
             return View(modifiedDepartment);
         }
+        [HttpGet]
+        public async Task<IActionResult> BaseOn(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var department = await _context.Departments
+                .Include(d => d.Administrator)
+                .FirstOrDefaultAsync(m => m.DepartmentID == id);
+
+
+            if (department == null)
+            {
+                return NotFound();
+            }
+            ViewData["InstructorID"] = new SelectList(_context.Instructors, "ID", "FullName", department.InstructorID);
+            return View(department);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> BaseOn(int id, [Bind("DepartmentID, Name, Budget, StartDate, RowVersion, InstructorID, DepartmentOwner")] Department department, string actionType)
+        {
+            if (ModelState.IsValid)
+            {
+                var departments = await _context.Departments
+                     .FirstOrDefaultAsync(m => m.DepartmentID == id);
+                if (actionType == "Make")
+                {
+                    _context.Add(departments);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction("Index");
+                }
+                else if (actionType == "Make & delete")
+                {
+                    _context.Departments.Remove(departments);
+                    _context.Add(department);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction("Index");
+                }
+                return View(department);
+            }
+            ViewData["DepartmentID"] = new SelectList(_context.Departments, "ID", "FullName", department.InstructorID);
+            return View(department);
+        }
+
     }
 }
