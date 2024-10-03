@@ -1,4 +1,5 @@
 ﻿using ContosoUniversity.Data;
+using ContosoUniversity.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -55,6 +56,31 @@ namespace ContosoUniversity.Controllers
             _context.Courses.Remove(course);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+        [HttpPost]
+        public async Task<IActionResult> Clone(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+           
+            var clonedCourse = await _context.Courses
+                .FirstOrDefaultAsync(m => m.CourseID == id);
+            if (clonedCourse == null)
+            {
+                return NotFound();
+            }
+            int lastID = _context.Courses.OrderBy(u => u.CourseID).Last().CourseID;
+            lastID++;
+            var selectedCourse = new Course();
+            selectedCourse.CourseID = clonedCourse.CourseID;
+            selectedCourse.Title = clonedCourse.Title;
+            selectedCourse.Credits = clonedCourse.Credits;
+            selectedCourse.Enrollments = clonedCourse.Enrollments;
+            _context.Courses.Add(selectedCourse);
+            await _context.SaveChangesAsync(true);
+            return RedirectToAction("Index");
         }
     }
 }
