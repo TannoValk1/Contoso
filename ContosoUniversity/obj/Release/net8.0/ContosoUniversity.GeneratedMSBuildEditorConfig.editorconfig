@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\opilane\Source\Repos\TannoValk1\Contoso\ContosoUniversity
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/opilane/Source/Repos/TannoValk1/Contoso/ContosoUniversity/Views/Delinquents/Clone.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaW5xdWVudHNcQ2xvbmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/opilane/Source/Repos/TannoValk1/Contoso/ContosoUniversity/Views/Delinquents/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaW5xdWVudHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

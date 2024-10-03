@@ -67,7 +67,7 @@ namespace ContosoUniversity.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit([Bind("ID,LastName,FirstMidName,Violations")] Delinquent modifiedDelinquent)
+         public async Task<IActionResult> Edit([Bind("ID,LastName,FirstMidName,Violations")] Delinquent modifiedDelinquent)
         {
             if (ModelState.IsValid)
             {
@@ -108,6 +108,40 @@ namespace ContosoUniversity.Controllers
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
+        }
+        [HttpGet]
+        public IActionResult Clone()
+        {
+            return View();
+        }
+        [HttpPost, ActionName("Clone")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Clone(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var clonedDelinquent = await _context.Delinquents
+                .FirstOrDefaultAsync(m => m.ID == id);
+
+            if (clonedDelinquent == null)
+            {
+                return NotFound();
+            }
+
+            var selectedDelinquent = new Delinquent
+            {
+                FirstMidName = clonedDelinquent.FirstMidName,
+                LastName = clonedDelinquent.LastName,
+                Violation = clonedDelinquent.Violation
+            };
+
+            _context.Delinquents.Add(selectedDelinquent);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index");
         }
 
     }
