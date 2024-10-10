@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<ContosoUniversity.Models.Course>
 @{
-    ViewData["Title"] = "Departments";
+    ViewData["Title"] = "Index";
 }
 <h1>Departments</h1>
 <p>
@@ -9,27 +9,26 @@
 <table class="table">
     <thead>
         <tr>
-            <th> @Html.DisplayNameFor(model => model.CourseID)</th>
-            <th> @Html.DisplayNameFor(model => model.Title)</th>
-            <th> @Html.DisplayNameFor(model => model.Credits)</th>
-            <th> @Html.DisplayNameFor(model => model.Enrollments)</th>
-            <th>Available actions:  </th>
+            <th>@Html.DisplayNameFor(model => model.First().CourseID)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Title)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Credits)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Enrollments)</th>
+            <th>Available actions:</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var course in Model)
         {
             <tr>
-                <td> @Html.DisplayFor(modelItem => course.CourseID)</td>
-                <td> @Html.DisplayFor(modelItem => course.Title)</td>
-                <td> @Html.DisplayFor(modelItem => course.Credits)</td>
-                <td> @Html.DisplayFor(modelItem => course.Enrollments)</td>
+                <td>@Html.DisplayFor(modelItem => course.CourseID)</td>
+                <td>@Html.DisplayFor(modelItem => course.Title)</td>
+                <td>@Html.DisplayFor(modelItem => course.Credits)</td>
+                <td>@Html.DisplayFor(modelItem => course.Enrollments.Count)</td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@course.CourseID" class="btn btn-dark">Details</a>
-                    <a asp-action="Edit" asp-route-id="@course.CourseID" class="btn btn-dark">Edit</a>
-                    <a asp-action="Delete" asp-route-id="@course.CourseID" class="btn btn-dark">Delete</a>              
+                    <a asp-action="DetailsDelete" asp-route-id="@course.CourseID" class="btn btn-dark">Details</a>
+                    <a asp-action="CreateEdit" asp-route-id="@course.CourseID" class="btn btn-dark">Edit</a>
                 </td>
             </tr>
         }
     </tbody>
-</table> 
+</table>
