@@ -1,6 +1,6 @@
 ﻿@model ContosoUniversity.Models.Course
 @{
-    ViewData["Details"] = ViewBag.Title;
+    ViewData["Title"] = ViewBag.Title;
 }
 <h1>@ViewBag.Title</h1>
 <div>
@@ -27,14 +27,15 @@
     </dl>
     <a asp-action="Index" class="btn btn-primary">Back to List</a>
     @{
-        if (ViewBag.Title == "Details")
+        @if (ViewBag.Title == "Title")
+        {
+            <a asp-action="Delete" asp-route-id="@Model.CourseID" class="btn btn-secondary">Delete</a>
+        }
+        else
         {
             <a asp-action="CreateEdit" asp-route-id="@Model.CourseID" class="btn btn-warning">Edit</a>
             <a asp-action="Clone" asp-route-id="@Model.CourseID" class="btn btn-secondary">Clone</a>
         }
-        else
-        {
-            <a asp-action="Clone" asp-route-id="@Model.CourseID" class="btn btn-danger">Delete</a>
-        }
+
     }
 </div>

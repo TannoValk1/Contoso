@@ -17,14 +17,14 @@ namespace ContosoUniversity.Controllers
         {
             return View(await _context.Courses.ToListAsync());
         }
-
+        [HttpGet]
         public async Task<IActionResult> DetailsDelete(int? id)
         {
+
             if (id == null)
             {
                 return NotFound();
             }
-
             var course = await _context.Courses.FirstOrDefaultAsync(m => m.CourseID == id);
 
             if (course == null)
