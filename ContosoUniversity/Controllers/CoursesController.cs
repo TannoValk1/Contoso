@@ -52,17 +52,19 @@ namespace ContosoUniversity.Controllers
         {
             if (id == null)
             {
+                ViewBag.Title = "Create";
+                ViewBag.Description = "Tee uus Course";
                 return View(new Course());
             }
-
-            var course = await _context.Courses.FindAsync(id);
+            var course = await _context.CourseAssignments.FindAsync(id);
             if (course == null)
             {
                 return NotFound();
             }
+            ViewBag.Title = "Edit";
+            ViewBag.Description = "Edit Course";
             return View(course);
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateEdit([Bind("CourseID,Title,Credits")] Course course)
@@ -81,6 +83,7 @@ namespace ContosoUniversity.Controllers
                 return RedirectToAction("Index");
             }
             return View(course);
+
         }
     }
 }
