@@ -20,17 +20,9 @@ namespace ContosoUniversity.Controllers
         [HttpGet]
         public async Task<IActionResult> DetailsDelete(int? id)
         {
-
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
             var course = await _context.Courses.FirstOrDefaultAsync(m => m.CourseID == id);
-
-            if (course == null)
-            {
-                return NotFound();
-            }
+            if (course == null) return NotFound();
             return View(course);
         }
 
@@ -50,24 +42,14 @@ namespace ContosoUniversity.Controllers
         [HttpGet]
         public async Task<IActionResult> CreateEdit(int? id)
         {
-            if (id == null)
-            {
-                ViewBag.Title = "Create";
-                ViewBag.Description = "Tee uus Course";
-                return View(new Course());
-            }
-            var course = await _context.CourseAssignments.FindAsync(id);
-            if (course == null)
-            {
-                return NotFound();
-            }
-            ViewBag.Title = "Edit";
-            ViewBag.Description = "Edit Course";
+            Course course = id == null ? new Course() : await _context.Courses.FindAsync(id);
+            if (id != null && course == null) return NotFound();
             return View(course);
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateEdit([Bind("CourseID,Title,Credits")] Course course)
+        public async Task<IActionResult> CreateEdit(Course course)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +65,22 @@ namespace ContosoUniversity.Controllers
                 return RedirectToAction("Index");
             }
             return View(course);
-
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Clone(int id)
+        {
+            var course = await _context.Courses.FindAsync(id);
+            if (course == null) return NotFound();
+
+            var newCourse = new Course
+            {
+                Title = course.Title,
+                Credits = course.Credits
+            };
+
+            return View("CreateEdit", newCourse);
+        }
+
     }
 }
