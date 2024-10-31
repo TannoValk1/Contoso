@@ -4,46 +4,45 @@
     ViewData["Title"] = "BaseOn";
 }
 
-<h1>Edit</h1>
+<h1>BaseOn</h1>
 
-<div>
-    <h4>Department</h4>
-    <hr />
-    <div class="row">
-        <div class="col-md-4">
-            <form asp-action="BaseOn">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="hidden" asp-for="DepartmentID" />
-                <div class="form-group">
-                    <label asp-for="Name" class="control-label"></label>
-                    <input asp-for="Name" class="form-control" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Budget" class="control-label"></label>
-                    <input asp-for="Budget" class="form-control" />
-                    <span asp-validation-for="Budget" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="StartDate" class="control-label"></label>
-                    <input asp-for="StartDate" class="form-control" />
-                    <span asp-validation-for="StartDate" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Budget" class="control-label"></label>
-                    <input asp-for="Budget" class="form-control" />
-                    <span asp-validation-for="Budget" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" name="actionType" value="Make" class="btn btn-primary" />
-                    <input type="submit" name="actionType" value="Make & delete" class="btn btn-primary" />
-                    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
-                </div>
-            </form>
-        </div>
+<h4>Department</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="BaseOn">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DepartmentID" />
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Budget" class="control-label"></label>
+                <input asp-for="Budget" class="form-control" />
+                <span asp-validation-for="Budget" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Lore" class="control-label"></label>
+                <input asp-for="Lore" class="form-control" />
+                <span asp-validation-for="Lore" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" name="actionType" value="Make" class="btn btn-primary" />
+                <input type="submit" name="actionType" value="Make & delete" class="btn btn-danger" />
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
     </div>
-</div>
-<div>
-    <input type="hidden" asp-for="DepartmentID" />
-    <input type="submit" value="Edit" class="btn btn-warning" /> | <a asp-action="Index">Cancel</a>
 </div>

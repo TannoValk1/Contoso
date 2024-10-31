@@ -1,26 +1,46 @@
 ﻿@model ContosoUniversity.Models.Department
+
 @{
-    ViewData["Title"] = "Departments";
+    ViewData["Title"] = "Details";
 }
+
 <h1>Details</h1>
+
 <div>
-    <h4>Departments</h4>
+    <h4>Employee Data</h4>
     <hr />
     <dl class="row">
-        <dt>@Html.DisplayNameFor(model => model.Name)</dt>
-        <dt>@Html.DisplayFor(model => model.Name)</dt>
-        <dt>@Html.DisplayNameFor(model => model.Administrator.FullName)</dt>
-        <dt>@Html.DisplayFor(model => model.Administrator.FullName)</dt>
-        <dt>@Html.DisplayNameFor(model => model.Budget)</dt>
-        <dt>@Html.DisplayFor(model => model.Budget)</dt>
-        <dt>@Html.DisplayNameFor(model => model.StudentHeight)</dt>
-        <dt>@Html.DisplayFor(model => model.StudentHeight)</dt>
-        <dt>@Html.DisplayNameFor(model => model.Lore)</dt>
-        <dt>@Html.DisplayFor(model => model.Lore)</dt>
-        <dt></dt>
+        <dt class="col-sm-2"> @Html.DisplayNameFor(model => model.Name)</dt>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-10"> @Html.DisplayFor(model => model.Name)</dt>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-2"> @Html.DisplayNameFor(model => model.Administrator.FullName)</dt>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-10"> @Html.DisplayFor(model => model.Administrator.FullName)</dt>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-2"> @Html.DisplayNameFor(model => model.Budget)</dt>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-10"> @Html.DisplayFor(model => model.Budget)</dt>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-2"> @Html.DisplayNameFor(model => model.StudentHeight)</dt>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-10"> @Html.DisplayFor(model => model.StudentHeight)</dt>
+    </dl>
+    dl class="row">
+    <dt class="col-sm-2"> @Html.DisplayNameFor(model => model.Lore)</dt>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-10"> @Html.DisplayFor(model => model.Lore)</dt>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.DepartmentID" class="btn btn-warning">Edit</a>
-    <a asp-action="Index" class="btn btn-secondary">Index</a>
+    <a asp-action="Edit" asp-route-id="@Model.DepartmentID">Edit</a>
+    <a asp-action="Index">Back to List</a>
 </div>
