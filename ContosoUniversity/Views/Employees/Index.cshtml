@@ -49,13 +49,9 @@
                 @Html.DisplayNameFor(Model => Model.EmploymentStart)
         </td>
         <td colspan="2">
-            <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@item.ID">Edit</a>
-            <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@item.ID">Details</a>
-            <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@item.ID">Delete</a>
-            <form asp-action="Clone" asp-controller="Employees" method="post">
-                <input type="hidden" asp-for="@item.ID" />
-                <input type="submit" class="btn btn-warning" asp-action="Clone" value="Clone" asp-route-id="@item.id" />
-            </form>
+            <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@item.EmployeeID">Edit</a>
+            <a asp-action="Details" class="btn btn-secondary" asp-route-id="@item.EmployeeID">Details</a>
+            <a asp-action="Delete" class="btn btn-secondary" asp-route-id="@item.EmployeeID">Delete</a>
         </td>
                  </tr>
             }

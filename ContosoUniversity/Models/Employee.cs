@@ -2,10 +2,6 @@
 
 namespace ContosoUniversity.Models
 {
-    public enum JobName
-    {
-
-    }
     public class Employee
     {
         [Key]
@@ -19,7 +15,7 @@ namespace ContosoUniversity.Models
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
         
-        public JobName? JobName { get; set; }
+        public string JobName { get; set; }
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         [Display(Name = "Employlement Start:")]
