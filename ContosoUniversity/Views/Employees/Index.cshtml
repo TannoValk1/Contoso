@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ContosoUniversity.Models.Employee>
+
+    @{
+        ViewData["Title"] = "Index";
+    }
+    <h1>Employees Index</h1>
+
+    <p>
+        <a asp-action ="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(Model => Model.EmployeeID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(Model => Model.FirstMidName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(Model => Model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(Model => Model.JobName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(Model => Model.EmploymentStart)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+        <td>
+                @Html.DisplayNameFor(Model => Model.EmployeeID)
+        </td>
+        <td>
+                @Html.DisplayNameFor(Model => Model.FirstMidName)
+        </td>
+        <td>
+                @Html.DisplayNameFor(Model => Model.LastName)
+        </td>
+        <td>
+                @Html.DisplayNameFor(Model => Model.JobName)
+        </td>
+        <td>
+                @Html.DisplayNameFor(Model => Model.EmploymentStart)
+        </td>
+        <td colspan="2">
+            <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@item.ID">Edit</a>
+            <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@item.ID">Details</a>
+            <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@item.ID">Delete</a>
+            <form asp-action="Clone" asp-controller="Employees" method="post">
+                <input type="hidden" asp-for="@item.ID" />
+                <input type="submit" class="btn btn-warning" asp-action="Clone" value="Clone" asp-route-id="@item.id" />
+            </form>
+        </td>
+                 </tr>
+            }
+        </tbody>
+    </table>
