@@ -26,15 +26,14 @@ namespace ContosoUniversity.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EmployeeID, FirstMidName, LastName, JobName, EmploymentStart")] Employee employee)
+        public async Task<IActionResult> Create([Bind("FirstMidName, LastName, JobName, EmploymentStart")] Employee employee)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _context.Employees.Add(employee);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["JobName"] = new SelectList(_context.Employees, "JobName");
             return View(employee);
         }
         public async Task<IActionResult> Details(int? id)
@@ -85,6 +84,35 @@ namespace ContosoUniversity.Controllers
                 return RedirectToAction("Index");
             }
             return View(modifiedEmployee);
+        }
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null) 
+            {
+                return NotFound();
+            }
+
+            var employee = await _context.Employees
+                .FirstOrDefaultAsync(m => m.EmployeeID == id);
+
+            if (employee == null) 
+            {
+                return NotFound();
+            }
+
+            return View(employee);
+        }
+        
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var employee = await _context.Employees.FindAsync(id);
+
+            _context.Employees.Remove(employee);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }

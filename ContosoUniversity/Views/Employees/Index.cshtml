@@ -34,19 +34,19 @@
             {
                 <tr>
         <td>
-                @Html.DisplayNameFor(Model => Model.EmployeeID)
+                @Html.DisplayFor(Modelitem => item.EmployeeID)
         </td>
         <td>
-                @Html.DisplayNameFor(Model => Model.FirstMidName)
+                    @Html.DisplayFor(Modelitem => item.FirstMidName)
         </td>
         <td>
-                @Html.DisplayNameFor(Model => Model.LastName)
+                    @Html.DisplayFor(Modelitem => item.LastName)
         </td>
         <td>
-                @Html.DisplayNameFor(Model => Model.JobName)
+                    @Html.DisplayFor(Modelitem => item.JobName)
         </td>
         <td>
-                @Html.DisplayNameFor(Model => Model.EmploymentStart)
+                    @Html.DisplayFor(Modelitem => item.EmploymentStart)
         </td>
         <td colspan="2">
             <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@item.EmployeeID">Edit</a>
