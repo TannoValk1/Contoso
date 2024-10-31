@@ -23,11 +23,7 @@
                 <input asp-for="StartDate" class="form-control"></input>
                 <span asp-validation-for="StartDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Lore" class="control-label"></label>
-                <input asp-for="Lore" class="form-control"></input>
-                <span asp-validation-for="Lore" class="text-danger"></span>
-            </div> 
+            
             <div class="form-group">
                 <label asp-for="InstructorID" class="control-label"></label>
                 <select asp-for="InstructorID" class="form-control" asp-items="ViewBag.InstructorID">

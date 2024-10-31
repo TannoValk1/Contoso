@@ -18,7 +18,6 @@ namespace ContosoUniversity.Models
 
 
         public Student? StudentHeight { get; set; }
-        public string? Lore { get; set; }
         public int? InstructorID { get; set; }
         [Timestamp]
         public byte? RowVersion { get; set; }

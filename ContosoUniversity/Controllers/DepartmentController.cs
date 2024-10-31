@@ -96,18 +96,18 @@ namespace ContosoUniversity.Controllers
             {
                 return NotFound();
             }
-            var DepartmentToEdit = await _context.Departments
+            var departmentToEdit = await _context.Departments
                 .FirstOrDefaultAsync(m => m.DepartmentID == id);
-            if (DepartmentToEdit == null)
+            if (departmentToEdit == null)
             {
                 return NotFound();
             }
-            return View(DepartmentToEdit);
+            return View(departmentToEdit);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit([Bind("DepartmentID, Name, Budget, Administrator, StartDate, Lore")] Department modifiedDepartment)
+        public async Task<IActionResult> Edit([Bind] Department modifiedDepartment)
         {
             if (ModelState.IsValid)
             {
